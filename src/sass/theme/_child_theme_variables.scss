@@ -1,0 +1,32 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/assets/bootstrap5/_variables.scss, paste it here and edit the value.
+
+
+$orange: #fc8904; 
+$black: #000000;
+
+$primary: $orange; 
+
+// Define font variables
+$font-family-base: 'Work Sans', sans-serif;
+$headings-font-family: 'PT Serif', sans-serif;
+
+$headings-font-weight: 600;
+$headings-line-height: 1.1rem;
+
+$enable-grid-classes: true; // Set to true to enable the grid classes
+$enable-cssgrid: true; // Set to true to enable the CSS Grid classes
+
+// Gradient
+//
+// The gradient which is added to components if `$enable-gradients` is `true`
+// This gradient is also added to elements with `.bg-gradient`
+// scss-docs-start variable-gradient
+$enable-gradients: true; // Set to true to enable the gradient classes
+// $gradient: linear-gradient(180deg, rgba(#fff, .15), rgba(#fff, 0)) !default;
+$gradient: linear-gradient(90deg, #003f5b, #2b4b7d, #5f5195, #98509d, #cc4c91, #f25375, #ff6f4e, #ff9913) !default;
+// scss-docs-end variable-gradient
+
+$navbar-padding-y: 0px;
+

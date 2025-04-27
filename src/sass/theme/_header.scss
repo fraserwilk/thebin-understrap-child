@@ -1,0 +1,98 @@
+// Header Styles
+.bg-thebin {
+	// background: linear-gradient(90deg, #003f5b, #2b4b7d, #5f5195, #98509d, #cc4c91, #f25375, #ff6f4e, #ff9913) !important;
+    background-image: linear-gradient(270deg, #003f5b, #2b4b7d, #5f5195, #98509d, #cc4c91, #f25375, #ff6f4e, #ff9913);
+}
+
+// Style header logo from large breakpoint and down
+@include media-breakpoint-down(xxl) {
+  .binlogo img {
+    width: 240px;
+    height: auto;
+    max-height: 111px;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .binlogo img {
+    width: 175px;
+    max-height: 81px;
+  }
+}
+
+
+// Navigation styles
+.navbar {
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%207H19%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22square%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M5%2012L19%2012%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22square%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M5%2017L19%2017%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22square%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+}
+
+#secondary.navbar-nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a.navbar-brand {
+  // border: solid pink 4px
+}
+
+.navbar-brand:hover, .navbar-brand:focus {
+  color: var(--bs-navbar-brand-hover-color);
+}
+
+
+.navbar-toggler {
+    padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+    font-size: var(--bs-navbar-toggler-font-size);
+    line-height: 1;
+    color: var(--bs-navbar-color);
+    background-color: transparent;
+    border:none;
+    // border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
+    border-radius: var(--bs-navbar-toggler-border-radius);
+    transition: var(--bs-navbar-toggler-transition);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .navbar-toggler {
+      transition: none;
+    }
+  }
+  .navbar-toggler:hover {
+    text-decoration: none;
+  }
+  .navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 var(--bs-navbar-toggler-focus-width);
+  }
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    vertical-align: middle;
+    background-image: var(--bs-navbar-toggler-icon-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+
+.nav-link {
+    color: white;
+}
+
+#navbarSearch {
+  background-image: linear-gradient(270deg, #003f5b, #2b4b7d, #5f5195, #98509d, #cc4c91, #f25375, #ff6f4e, #ff9913);
+}
+
+.shadow {
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1) !important;
+}
+
+.secondary-nav > li > a {
+    color: var(--primary);
+}
+
+
+// navbar transition
+
+// end Navigation styles

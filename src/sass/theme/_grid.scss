@@ -1,0 +1,112 @@
+#home-grid {
+  
+    .post-pattern {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 16px;
+    }
+  
+    .col-1, .col-3 {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+  
+    .col-2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      width: 100%;
+    }
+  
+    .box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0) 40%,rgba(0,0,0,0.6));
+        z-index: 1; // Ensure overlay is below content
+      }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 200px;
+        text-align: left;
+        flex: 1 1 auto;
+        overflow: hidden;
+        padding: 0;
+
+        a,
+        .box-content,
+        h3 {
+          position: relative;
+          z-index: 2; // Ensure content is above the overlay
+        }
+
+  
+      a {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .box-content {
+        // background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 0;
+        // align-items: end;
+        width: 100%;
+        margin-top: auto;
+        box-sizing: border-box;
+        transition: background 0.2s;
+      }
+
+      h3 {
+        font-size: 1rem;
+        margin: 0;
+        padding: 16px;
+        // background: rgba(0, 0, 0, 0.2);
+        color: #fff;
+        transition: background 0.2s;
+        width: 100%;
+      }
+  
+
+    }
+  
+    .large {
+      min-height: 350px;
+      flex: 1;
+    }
+  
+    /* Responsive: Stack columns on small screens */
+    @media (max-width: 600px) {
+  
+      .post-pattern {
+        grid-template-columns: 1fr;
+      }
+  
+      .col-1, .col-2, .col-3 {
+        flex-direction: column;
+        gap: 0;
+      }
+  
+      .box {
+        margin-bottom: 16px;
+      }
+    }
+  }
+  
