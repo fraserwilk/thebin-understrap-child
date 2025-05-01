@@ -31,10 +31,6 @@
     margin-right: auto;
 }
 
-a.navbar-brand {
-  // border: solid pink 4px
-}
-
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
 }
@@ -88,10 +84,21 @@ a.navbar-brand {
     box-shadow: 0 5px 10px rgba(0,0,0,0.1) !important;
 }
 
-.secondary-nav > li > a {
-    color: var(--primary);
-}
 
+// Secondary nav styles
+
+#secondary-nav {
+    background-color: $secondary;
+
+
+  .secondary-nav > li > a {
+      color: $black;
+
+      &:hover {
+          color: $primary;
+      }
+  }
+}
 
 // navbar transition
 

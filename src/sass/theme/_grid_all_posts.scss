@@ -1,0 +1,46 @@
+.card {
+    border: none;
+    border-radius: 0;
+    box-shadow: $box-shadow;
+
+.card-header {
+    padding: 0;
+    border: none;
+    display: flex;
+    background-color: $primary;
+    padding: 0.2rem 0.5rem;
+    align-items: center;
+    border-radius: 0;
+    font-size: 80%;
+    color: $white;
+
+    .category {
+        text-transform: uppercase;
+        font-weight: 700;
+        width: 100%;
+    }
+
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+
+.card-img img {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.card-body {
+    h3.card-title {
+        font-size: calc(0.8rem + .6vw);
+
+    a {
+        color: $black;
+        text-decoration: none;
+        }
+    }
+}
+}
+

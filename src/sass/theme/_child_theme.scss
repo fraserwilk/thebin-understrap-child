@@ -1,3 +1,7 @@
+p {
+    padding-bottom: 1rem;
+}
+
 article {
     text-align: left;
 
@@ -8,13 +12,42 @@ article {
         font-size: 80%;
     }
 
-
     h2.entry-title a {
-        color: var(--black);
+        color: $black;
         text-decoration: none;
         font-size: 60%;
     }
+
 }
+
+// Article footer styles
+
+.entry-footer {
+    margin: 3rem 0;
+
+    .cat-links {
+        color: $white;
+        background-color: $primary;
+        padding: 0.5rem;
+    }
+}
+.post-navigation {
+
+
+    i {
+        color: $primary;
+        font-size: 2rem;
+
+        vertical-align: middle;
+    }
+}
+
+#comments {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: $white;
+ }
+ // End of article footer styles
 
 // Footer styles
 
@@ -36,4 +69,10 @@ article {
         padding: 1rem 0;
         color: $black;
     }
+}
+
+
+.adspot-left-sidebar {
+    padding: 1rem;
+    font-size: smaller;
 }

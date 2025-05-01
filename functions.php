@@ -127,7 +127,7 @@ if ( ! function_exists( 'understrap_posted_on' ) ) {
 			'understrap_posted_on',
 			sprintf(
 				'<span class="posted-on">%1$s <a href="%2$s" rel="bookmark">%3$s</a></span>',
-				esc_html_x( 'Posted on', 'post date', 'understrap' ),
+				esc_html_x( '', 'post date', 'understrap' ),
 				esc_url( get_permalink() ), // @phpstan-ignore-line -- post exists
 				apply_filters( 'understrap_posted_on_time', $time_string )
 			)
@@ -204,7 +204,7 @@ require_once get_theme_file_path( 'inc/child-custom-post-types.php' );
 // Add ticker
 function category_post_titles_ticker($atts) {
     $atts = shortcode_atts([
-        'category' => 'xxx',
+        'category' => '',
         'limit' => 0,
     ], $atts);
 
@@ -213,7 +213,7 @@ function category_post_titles_ticker($atts) {
         'posts_per_page' => $atts['limit'],
     ]);
 
-    $output = '<div class="ticker"><div class="ticker-title">Trending Now</div>';
+    $output = '<div class="ticker"><div class="ticker-title">Trending Now</div><div class="ticker-items">';
 
     if ($query->have_posts()) {
         while ($query->have_posts()) {
@@ -226,8 +226,40 @@ function category_post_titles_ticker($atts) {
     }
 
     wp_reset_postdata();
-    $output .= '</div>'; // closes .ticker
+    $output .= '</div></div>'; // closes .ticker
 
     return $output;
 }
 add_shortcode('category_ticker', 'category_post_titles_ticker');
+
+
+// Add custom left & right sidebars on homepage
+function register_additional_childtheme_sidebars() {
+    register_sidebar( array(
+        'id' => 'custom-left-sidebar',
+        'name' => __( 'Custom Left Sidebar', 'child-theme-textdomain' ),
+        'description' => __( 'Custom left sidebar for extra section', 'child-theme-textdomain' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+    register_sidebar( array(
+        'id' => 'custom-right-sidebar',
+        'name' => __( 'Custom Right Sidebar', 'child-theme-textdomain' ),
+        'description' => __( 'Custom right sidebar for extra section', 'child-theme-textdomain' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+}
+add_action( 'init', 'register_additional_childtheme_sidebars' );
+
+// remove "Category:" from the archive title
+add_filter( 'get_the_archive_title', function( $title ) {
+	if ( is_category() ) {
+		$title = single_cat_title( '', false ); // removes "Category:"
+	}
+	return $title;
+});

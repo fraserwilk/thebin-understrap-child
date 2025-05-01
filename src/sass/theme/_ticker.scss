@@ -4,65 +4,94 @@
     gap: 1rem;
     flex-wrap: wrap;
     align-items: center;
-    justify-content:flex-start;
     position: relative;
     width: 100%;
     overflow: hidden;
     height: 2rem;
     background: $white;
-    border: 1px solid #ddd;
-    margin: 2rem 0;
+    // border: 1px solid #ddd;
+    margin: 1.5rem 0;
     text-wrap: nowrap;
 }
 
 .ticker-title {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    margin-right: 1em;
-    color: $white;
-    background-color: $gray-800;
-    padding: 0.5rem;
-    max-width: 8rem;
-    white-space: nowrap;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  background-color: #333;
+  color: $white;
+  padding: 0.1rem 1rem;
+  white-space: nowrap;
+}
+
+.ticker-items {
+  flex: 1;
+  position: relative;
+  height: 2rem;
+  overflow: hidden;
 }
 
 .ticker-item {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s;
-    font-size: 0.8rem;
-    text-align: left;
-    padding-left: 8rem;
-    text-wrap: nowrap;
-    white-space: nowrap;
-    overflow: hidden;
-
-    a {
-        text-decoration: none;
-    }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: none;
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 2rem;
+  text-align: left;
+  white-space: nowrap;
+  // overflow: hidden;
+  
+  a {
+      text-decoration: none;
+      color: inherit;
+  }
 }
 .ticker-item.active {
-    opacity: 1;
-    position: absolute;
+    animation: ticker-fade-in-right 0.6s forwards;
+    position: relative;
+
 }
 
+@keyframes ticker-fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
   
   /* Responsive: Stack items vertically on small screens */
   @media (max-width: 600px) {
     .ticker {
         flex-direction: column;
         align-items: flex-start;
-        gap: 2rem;
+        height: auto;
+        gap: 0;
     }
 
     .ticker-title {
-      // margin-bottom: 0.5em;
+      width: 100%;
+      text-align: left;
       margin-right: 0;
     }
+
+    .ticker-items {
+      width: 100%;
+      background-color: hsl(26, 97%, 59%, 10%);
+    }
     .ticker-item {
-      white-space: nowrap;
+      padding-left: 0.5em;
     }
   }
   

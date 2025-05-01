@@ -30,7 +30,7 @@ defined( 'ABSPATH' ) || exit;
                     'title'     => get_the_title(),
                     'link'      => get_permalink(),
                     'excerpt'   => get_the_excerpt(),
-                    'thumbnail' => get_the_post_thumbnail(null, 'medium'),
+                    'thumbnail' => get_the_post_thumbnail(null, 'full'),
                 );
             endwhile;
             wp_reset_postdata();
@@ -68,7 +68,7 @@ defined( 'ABSPATH' ) || exit;
                     >
                         <a href="<?php echo esc_url($p['link']); ?>">
                             <div class="box-content">
-                                <h3><?php echo esc_html($p['title']); ?></h3>
+                                <h3 class="entry-title"><?php echo esc_html($p['title']); ?></h3>
                             </div>
                         </a>
                     </div>

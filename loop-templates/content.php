@@ -9,62 +9,38 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<div class="container">
-    <div class="grid text-center" style="--bs-gap: 2rem;">
+    <article <?php post_class('g-col-md-6 g-col-lg-4 g-col-12 card'); ?> id="post-<?php the_ID(); ?>">
+    
+        <header class="card-header">
+        <?php if ( 'post' === get_post_type() ) : ?>
+                <div class="category">
+                    <?php
+                    $categories = get_the_category();
+                    if ( ! empty( $categories ) ) {
+                        echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '" class="">' . esc_html( $categories[0]->name ) . '</a>';
+                    }
+                    ?>
+                </div>
 
-	<?php
-        $args = array(
-            'posts_per_page' => -1, // Show all posts
-            'post_type'      => 'post', // Ensure it's pulling posts
-            'orderby'        => 'date',
-            'order'          => 'DESC'
-        );
+                <?php understrap_posted_on(); ?>
+            <?php endif; ?>
+        </header>
 
-        $custom_query = new WP_Query($args);
-
-        if ( $custom_query->have_posts() ) :
-            while ( $custom_query->have_posts() ) : $custom_query->the_post();
-        ?>
-                
-                <article <?php post_class('g-col-md-6 g-col-lg-3 g-col-12'); ?> id="post-<?php the_ID(); ?>" style="border: 1px solid #000; padding: 1rem;">
-                    
-                    <header class="entry-header">
-                        <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-                        <?php if ( 'post' === get_post_type() ) : ?>
-                            <div class="entry-meta">
-                                <?php understrap_posted_on(); ?>
-                            </div>
-                        <?php endif; ?>
-                    </header>
-
-                    <?php if ( has_post_thumbnail() ) : ?>
-                        <div class="post-thumbnail">
-                            <?php echo get_the_post_thumbnail( $post->ID, 'large', ['class' => 'img-fluid'] ); ?>
-                        </div>
-                    <?php endif; ?>
-
-                    <div class="entry-content">
-                        <?php the_excerpt(); ?>
-                    </div>
-
-                    <footer class="entry-footer">
-                        <?php understrap_entry_footer(); ?>
-                    </footer>
-
-                </article><!-- .post -->
-
-				<?php
-            endwhile;
-            wp_reset_postdata(); // Reset post data to prevent conflicts
-        else :
-        ?>
-
-
-            <p><?php esc_html_e( 'Sorry, no posts found.', 'understrap' ); ?></p>
+        <?php if ( has_post_thumbnail() ) : ?>
+            <div class="card-img">
+                <?php the_post_thumbnail( 'large', ['class' => 'img-fluid'] ); ?>
+            </div>
         <?php endif; ?>
+        <div class="card-body">
+            <?php the_title( sprintf( '<h3 class="card-title"><a href="%s" rel="bookmark" class="card-title-link">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+        </div>
 
-    </div><!-- .grid -->
-</div><!-- .container -->
+        <footer class="card-footer">
+            <a href="<?php the_permalink(); ?>" class="card-link">
+                <?php esc_html_e( 'Read More ->', 'understrap' ); ?>
+            </a>
+        </footer>
+
+    </article>
 
 <!-- #post-<?php the_ID(); ?> -->

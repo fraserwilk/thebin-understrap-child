@@ -4,24 +4,16 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  .cs-footer-269 {
-    display: flex;
-    align-items: flex-start;
 
+  .cs-footer-269 {
     padding: clamp(0.25rem, 7.82vw, 0.75rem) 1rem;
     /* Navigation Links */
-
-    .wp-block-columns {
-      display: flex;
-      align-items: flex-start;
-      border: solid 2px pink
-    }
-    
 
       .wp-block-column {
         width: 100%;
         /* reset on tablet */
         max-width: 34.375rem;
+        height: 50vh;
         margin: auto;
         display: flex;
         justify-content: flex-start;
@@ -39,6 +31,10 @@
           text-wrap: balance;
           list-style: none;
         }
+
+        ul.wp-block-categories-list {
+            width: 100%;
+          }
 
         .wp-block-latest-posts li {
           display: flex;
@@ -190,6 +186,7 @@
       display: block;
   }
 }
+
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {

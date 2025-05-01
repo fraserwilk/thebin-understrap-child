@@ -1,0 +1,384 @@
+                                
+/*-- -------------------------- -->
+<---     two-col-all-posts      -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #two-col-all-posts {
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+      background-color: #fff;
+      overflow: hidden;
+    }
+    #two-col-all-posts .cs-container {
+      width: 100%;
+      /* changes to 1280px at desktop */
+      max-width: 56.25rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+      position: relative;
+      z-index: 15;
+    }
+    #two-col-all-posts .cs-content {
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: center;
+      width: 100%;
+      /* set text align to left if content needs to be left aligned */
+      text-align: center;
+    }
+    #two-col-all-posts .cs-title {
+      max-width: 23ch;
+    }
+    #two-col-all-posts .cs-card-group {
+      display: grid;
+      align-items: stretch;
+      grid-template-columns: repeat(autofit, minmax(305px, 1fr));
+      margin: 0;
+      width: 100%;
+      padding: 0;
+      /* 16px - 20px */
+      gap: clamp(1rem, 2vw, 1.25rem);
+    }
+    #two-col-all-posts .cs-item {
+      text-align: left;
+      list-style: none;
+      padding: 1.5rem clamp(1rem, 2.4vw, 1.5rem);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      // box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.05);
+      box-shadow: $box-shadow;
+      position: relative;
+      z-index: 1;
+      transition: border-color 0.3s;
+    }
+    #two-col-all-posts .cs-item:hover {
+      border-color: $secondary;
+    }
+    #two-col-all-posts .cs-item:hover .cs-picture img {
+      transform: scale(1.2);
+    }
+    #two-col-all-posts .cs-item:hover .cs-h3,
+    #two-col-all-posts .cs-item:hover .cs-link {
+      color: $primary;
+    }
+    #two-col-all-posts .cs-item:hover .cs-arrow {
+      filter: initial;
+    }
+    #two-col-all-posts .cs-image-group {
+      /* done in ems so we can use font size to scale it on desktop */
+      width: 16.0625em;
+      height: 12.5em;
+      /* 16px - 24px */
+      margin: 0 0 clamp(1rem, 2.4vw, 1.5rem);
+      position: relative;
+      z-index: 1;
+    }
+    #two-col-all-posts .cs-picture {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      /* clips the image from overflowing parent on hover */
+      overflow: hidden;
+    }
+    #two-col-all-posts .cs-picture img {
+      z-index: -1;
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 100%;
+      max-height: 14vh;;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.65s;
+    }
+    #two-col-all-posts .cs-mask {
+      /* SVG Colors */
+      --maskBorder: #e8e8e8;
+      --maskBG: #fff;
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      bottom: -1px;
+      right: -1px;
+    }
+    #two-col-all-posts .cs-info {
+      display: flex;
+      flex-direction: column;
+      padding-top: 1rem;;
+    }
+    
+    #two-col-all-posts .cs-card-category {
+        font-size: clamp(0.8rem, 0.8vw, 1rem);
+
+      a {
+        color: $primary;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+
+      .cs-card-date {
+        line-height: 1.2em;
+        margin: 0 0 1rem 0;
+        color: currentColor;
+      }
+    }
+
+    #two-col-all-posts .cs-h3 {
+      /* 20px - 25px */
+      font-size: clamp(0.8rem, 1vw, 1.5625rem);
+      text-align: inherit;
+      line-height: 1.5em;
+      font-weight: 700;
+      width: 100%;
+      margin: 0 0 0.5rem 0;
+      /* prevents padding and border from affecting height and width */
+      box-sizing: border-box;
+      color: $headings-color;
+      transition: background-color 0.3s;
+      transition: color 0.3s;
+    }
+    #two-col-all-posts .cs-ages {
+      font-size: 1rem;
+      line-height: 1.2em;
+      text-align: inherit;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+      color: $secondary;
+    }
+    #two-col-all-posts .cs-item-text {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 1.5vw, 1rem);
+      text-align: inherit;
+      line-height: 1.5em;
+      max-width: 50ch;
+      /* 16px - 24px */
+      margin: 0 0 clamp(1rem, 2.4vw, 1.5rem);
+      width: 100%;
+      color: $body-color;
+    }
+    #two-col-all-posts .cs-link {
+      font-size: 1rem;
+      text-decoration: none;
+      text-align: inherit;
+      line-height: 1.2em;
+      font-weight: 700;
+      color: $black;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 10vh;
+      transition: color 0.3s;
+    }
+    #two-col-all-posts .cs-link:hover .cs-arrow {
+      transform: translateX(0.25rem);
+    }
+    #two-col-all-posts .cs-arrow {
+      display: block;
+      height: auto;
+      width: 1.25rem;
+      transition: filter 0.3s,
+                  transform 0.3s;
+    }
+    #two-col-all-posts .cs-hills {
+      /* hills Color */
+      --hillBG: #F2FAF8;
+      width: 130%;
+      min-width: 120rem;
+      height: auto;
+      position: absolute;
+      /* positioned off the top at desktop */
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    #two-col-all-posts .cs-wrapper {
+      width: 110vw;
+      max-width: 106.25rem;
+      height: 50%;
+      display: none;
+      position: absolute;
+      /* 60px - 100px (same as the padding bottom of the section ) */
+      bottom: clamp(3.75rem, 7.82vw, 6.25rem);
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%);
+    }
+    #two-col-all-posts .cs-floater {
+      position: absolute;
+    }
+    #two-col-all-posts .cs-floater1 {
+      left: 0;
+      top: -13.75rem;
+    }
+    #two-col-all-posts .cs-floater2 {
+      bottom: -3.125rem;
+      right: 0;
+    }
+  }
+  /* Desktop - 1024px */
+  @media only screen and (min-width: 64rem) {
+    #two-col-all-posts .cs-container {
+      max-width: 80rem;
+    }
+    #two-col-all-posts .cs-card-group {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    #two-col-all-posts .cs-item {
+      grid-column: span 3;
+    }
+    #two-col-all-posts .cs-image-group {
+      /* scaling it down so it all fits proportionally */
+      font-size: min(1.2vw, 1em);
+    }
+    #two-col-all-posts .cs-wrapper {
+      display: block;
+    }
+    #two-col-all-posts .cs-hills {
+      bottom: auto;
+      top: 50%;
+    }
+  }
+  
+  /*-- -------------------------- -->
+  <---           Video            -->
+  <--- -------------------------- -*/
+  
+  /* Mobile - 360px */
+  @media only screen and (min-width: 0rem) {
+    #video-1497 {
+      padding: var(--sectionPadding);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+    #video-1497 .cs-container {
+      width: 100%;
+      max-width: 80.625rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+    }
+    #video-1497 .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: center;
+    }
+    #video-1497 .cs-big-link {
+      font-size: min(1.1vw, 1em);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    #video-1497 .cs-big-link:hover .cs-picture img {
+      transform: scale(1.1);
+    }
+    #video-1497 .cs-picture {
+      width: 80.625em;
+      height: 44.375em;
+      /* clips the img from overflowing the container on hover */
+      overflow: hidden;
+      display: block;
+      position: relative;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    #video-1497 .cs-picture img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
+      transition: transform 0.7s;
+    }
+    #video-1497 .cs-icon-wrapper {
+      /* 56px - 120px */
+      width: clamp(3.5rem, 11vw, 7.5rem);
+      height: clamp(3.5rem, 11vw, 7.5rem);
+      border-radius: 50%;
+      opacity: 1;
+      background-color: rgba(255, 255, 255, 0.5);
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      z-index: 100;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    #video-1497 .cs-icon-wrapper:hover {
+      transform: scale(1.1);
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+    }
+    #video-1497 .cs-link-icon {
+      /* 16px - 24px */
+      width: clamp(1rem, 2vw, 1.5rem);
+      height: auto;
+    }
+    #video-1497 .cs-mask {
+      /* Mask Colors */
+      --maskBorder: #e8e8e8;
+      --maskTopColor: #F2FAF8;
+      --maskBottomColor: #fff;
+      position: absolute;
+      top: -1px;
+      left: -3px;
+      right: -1px;
+      bottom: -1px;
+      z-index: 10;
+    }
+    #video-1497 .cs-floater {
+      position: absolute;
+      z-index: 100;
+    }
+    #video-1497 .cs-floater1 {
+      width: 10.5625em;
+      height: auto;
+      display: block;
+      top: 6.5625em;
+      right: -3.9375em;
+    }
+    #video-1497 .cs-floater2 {
+      width: 7.4375em;
+      height: auto;
+      display: block;
+      bottom: -2.1875em;
+      left: -0.875em;
+    }
+    #video-1497 .cs-hills {
+      /* hills Color */
+      --hillBG: #F2FAF8;
+      width: 140%;
+      min-width: 120rem;
+      height: auto;
+      position: absolute;
+      bottom: 47%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+                                  

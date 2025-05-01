@@ -1,0 +1,55 @@
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #wpforms-413 {
+        .wpforms-confirmation-container-full {
+            background-color: $gray-100;
+            padding: 20px;
+            border-radius: 5px;
+
+            .wpforms-poll-results {
+
+                .wpforms-poll-label {
+                    font-size: 1em;
+                    font-weight: bold;
+                    color: #333;
+                }
+
+                .wpforms-poll-answer {
+                    .wpforms-poll-answer-percent {
+                        font-size: 50%;
+                        background-color: $pink-100;
+                        padding: 0.1em 0.05em;
+                        margin: 0.4em;
+                    }
+
+                    .wpforms-poll-answer-label {
+                        font-size: 0.8rem;
+                        font-weight: 400;
+                        color: $gray-800;
+                        width: 100%;
+                    }
+
+                    .wpforms-poll-answer-bar {
+                        background: repeating-linear-gradient(45deg, #ddd, #ddd 10px, $primary 10px, $primary 20px);
+                    }
+
+                }
+
+                .wpforms-poll-total {
+                    font-size: 14px;
+                    color: #666;
+                }
+
+            }
+        }
+    }
+}
+
+  /* Desktop - 1024px */
+  @media only screen and (min-width: 64rem) {
+    #wpforms-413 {
+    .wpforms-poll-answer-label {
+        
+    }
+  }
+}

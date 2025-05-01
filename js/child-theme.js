@@ -6740,7 +6740,7 @@
 	  }
 	})();
 
-	// Ticker scroll.
+	// Ticker scroll and interval.
 	document.addEventListener('DOMContentLoaded', function () {
 	  var tickers = document.querySelectorAll('.ticker');
 	  var interval = 4000; // Change this value (in ms) for your desired speed
