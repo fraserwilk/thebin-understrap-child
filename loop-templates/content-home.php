@@ -27,6 +27,7 @@ defined( 'ABSPATH' ) || exit;
         if ($the_query->have_posts()) :
             while ($the_query->have_posts()) : $the_query->the_post();
                 $posts[] = array(
+                    'category'  => implode(', ', wp_list_pluck(get_the_category(), 'name')),
                     'title'     => get_the_title(),
                     'link'      => get_permalink(),
                     'excerpt'   => get_the_excerpt(),
@@ -66,6 +67,7 @@ defined( 'ABSPATH' ) || exit;
                             style="background-image: url('<?php echo esc_url($img_url); ?>');"
                         <?php endif; ?>
                     >
+                    <div class="category"><?php echo esc_html($p['category']); ?></div>
                         <a href="<?php echo esc_url($p['link']); ?>">
                             <div class="box-content">
                                 <h3 class="entry-title"><?php echo esc_html($p['title']); ?></h3>
