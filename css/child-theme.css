@@ -12699,7 +12699,7 @@ textarea:not([rows]) {
   }
   #services-1331 .cs-h3 {
     /* 20px - 25px */
-    font-size: clamp(0.8rem, 1vw, 1.5625rem);
+    font-size: clamp(0.8rem, 1vw, 1rem);
     line-height: 1.2em;
     font-weight: bold;
     color: #000000;
