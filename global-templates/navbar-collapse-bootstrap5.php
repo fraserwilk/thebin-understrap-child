@@ -55,9 +55,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 			)
 		);
 		?>
+		
 		<button class="btn ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-expanded="false" aria-controls="navbarSearch">
 			<i class="bi bi-search text-light"></i>
 		</button>
+		
 
 		
 
@@ -65,11 +67,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 </nav><!-- #main-nav -->
 <div class="collapse" id="navbarSearch">
-  <div class="container py-2">
-    <form class="d-flex justify-content-end" role="search">
+  <div class="container py-2 text-end" style="margin-left:auto; margin-right:10%;">
+	<!-- Search form -->
+  <?php get_search_form(); ?>
+    <!-- <form class="d-flex justify-content-end" role="search">
       <input class="form-control" type="search" placeholder="What to look for?" aria-label="Search">
       <button class="btn btn-outline-light" type="submit">Search</button>
-    </form>
+    </form> -->
   </div>
 </div>
 
