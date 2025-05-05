@@ -13258,4 +13258,50 @@ textarea:not([rows]) {
   text-decoration: none;
 }
 
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  .signup {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .signup-col-left {
+    color: #fff;
+    padding: 2rem;
+    background-image: url("https://thebin.com.au/wp-content/uploads/2025/05/join-newsletter.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    order: 2;
+  }
+  .signup-highlight-box {
+    padding: 1.4rem;
+    margin: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(2.5rem);
+    backdrop-filter: blur(2.5rem);
+  }
+  .signup-col-right {
+    background: #fff;
+    padding: 2rem;
+    order: 1;
+  }
+  .wpform-img img {
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  .signup-col-left {
+    order: 1;
+  }
+  .signup-col-right {
+    order: 2;
+  }
+}
+
 /*# sourceMappingURL=child-theme.css.map */
