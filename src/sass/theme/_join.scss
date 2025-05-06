@@ -19,9 +19,9 @@
     }
 
     .signup-highlight-box {
-        padding: 1.4rem;
-        margin: 0.5rem;
-        background: rgba(0,0,0,0.5);
+        padding: 0.5rem 1rem;
+        margin: 1rem;
+        background: rgba(0,0,0,0.2);
         backdrop-filter: blur(2.5rem);
     }
 
@@ -33,7 +33,7 @@
 
     .wpform-img img {
         object-fit: contain;
-        width: 100%;
+        width: 80%;
         height: auto;
         box-shadow: $box-shadow-lg;
     }

@@ -28,7 +28,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php
 				while ( have_posts() ) {
 					the_post();
-					get_template_part( 'loop-templates/content', 'single' );
+					if ( has_category( 'Events' ) ) {
+						// Display the event details
+						get_template_part( 'loop-templates/content', 'event' );
+					} else {
+						// Display the regular post content
+						get_template_part( 'loop-templates/content', 'single' );
+					}
+
 					understrap_post_nav();
 
 					// If comments are open or we have at least one comment, load up the comment template.
