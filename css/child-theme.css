@@ -11572,8 +11572,7 @@ article h2.entry-title a, article .entry-title.h2 a {
 }
 
 .cat-img img {
-  max-height: 180px;
-  aspect-ratio: 16/9;
+  max-height: 300px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
