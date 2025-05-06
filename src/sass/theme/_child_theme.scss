@@ -50,6 +50,10 @@ article {
     box-shadow: $box-shadow;
 }
 
+.article-hr:last-of-type {
+    display: none;
+}
+
 #comments {
     margin: 2rem 0;
     padding: 1rem;

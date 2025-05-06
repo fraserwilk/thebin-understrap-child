@@ -48,6 +48,7 @@ $container = get_theme_mod('understrap_container_type');
 
 								</div>
 							</article>
+							<hr class="article-hr text-primary">
 					<?php
 						endif;
 
