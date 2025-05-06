@@ -11571,6 +11571,12 @@ article h2.entry-title a, article .entry-title.h2 a {
   vertical-align: middle;
 }
 
+.cat-img img {
+  max-height: 180px;
+  aspect-ratio: 16/9;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
 #comments {
   margin: 2rem 0;
   padding: 1rem;
