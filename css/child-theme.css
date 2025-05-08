@@ -12169,6 +12169,17 @@ textarea:not([rows]) {
   color: #fc8904;
 }
 
+#navbarTop a.nav-link {
+  color: #000000;
+  font-size: 0.9rem;
+}
+#navbarTop a.nav-link:hover {
+  color: #fc8904;
+}
+#navbarTop a.nav-link:focus {
+  color: #fc8904;
+}
+
 .ticker {
   display: flex;
   flex-direction: row;

@@ -158,6 +158,7 @@ function thebin_register_menus() {
         array(
             'primary'   => __( 'Primary Menu', 'understrap' ),
             'secondary' => __( 'Secondary Menu', 'understrap' ),
+            'top' => __( 'Top Menu', 'understrap' ),
         )
     );
 }

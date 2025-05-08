@@ -11,7 +11,32 @@ defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
+<!-- The top Menu -->
+<nav id="top-nav" class="navbar navbar-expand-md">
+	<h2 id="top-nav-label" class="screen-reader-text">
+		<?php esc_html_e( 'Top Navigation', 'understrap' ); ?>
+	</h2>
 
+	<div class="<?php echo esc_attr( $container ); ?>">
+
+		<?php
+		wp_nav_menu(
+			array(
+				'theme_location'  => 'top',
+				'container_class' => 'collapse navbar-collapse text-primary',
+				'container_id'    => 'navbarTop',
+				'menu_class'      => 'navbar-nav top-nav ms-auto text-uppercase',
+				'fallback_cb'     => '',
+				'menu_id'         => 'top',
+				'depth'           => 1,
+				'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+			)
+		);
+		?>
+	</div><!-- .container(-fluid) -->
+</nav>
+
+<!-- The Main WordPress Menu -->
 <nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-thebin" aria-labelledby="main-nav-label" data-bs-theme="dark">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
@@ -19,7 +44,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</h2>
 
 
-	<div class="<?php echo esc_attr( $container ); ?>">
+	<div class="<?php echo esc_attr( $container ); ?> py-2">
 
 		<button
 			class="navbar-toggler"
@@ -68,12 +93,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 </nav><!-- #main-nav -->
 <div class="collapse" id="navbarSearch">
   <div class="container py-2 text-end" style="margin-left:auto; margin-right:10%;">
-	<!-- Search form -->
   <?php get_search_form(); ?>
-    <!-- <form class="d-flex justify-content-end" role="search">
-      <input class="form-control" type="search" placeholder="What to look for?" aria-label="Search">
-      <button class="btn btn-outline-light" type="submit">Search</button>
-    </form> -->
   </div>
 </div>
 
@@ -102,3 +122,4 @@ $container = get_theme_mod( 'understrap_container_type' );
 		?>
 	</div><!-- .container(-fluid) -->
 </nav>
+
