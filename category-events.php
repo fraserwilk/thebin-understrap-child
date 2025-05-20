@@ -17,7 +17,7 @@ $container = get_theme_mod('understrap_container_type');
 				<?php if (have_posts()) : ?>
 
 					<header class="page-header">
-						<h1 class="page-title">Events</h1>
+						<h1 class="page-title">EVENTS</h1>
 					</header>
 
 					<?php

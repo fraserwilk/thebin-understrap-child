@@ -34,6 +34,10 @@ if (is_page_template('page-templates/no-title.php')) {
             <div class="col-md-12 content-area" id="primary">
 
                 <main class="site-main" id="main" role="main">
+                        <h1>
+                            <?php echo the_title(); ?>
+                        </h1>
+                    
                     <!-- Ticker is added here in the functions.php -->
                     
                     <!-- 3 col grid -->

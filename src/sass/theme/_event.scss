@@ -1,0 +1,23 @@
+article {
+    .entry-header {
+        a {
+            color: $secondary;
+            text-decoration: none;
+        
+            h2.entry-title {
+                font-size: clamp(2rem, 1.3077rem + 2.0513vw, 3rem);
+                margin-bottom: 0.5rem;
+                
+                &:hover {
+                    color: $primary;
+                }
+                &:focus {
+                    color: $primary;
+                }
+                &:active {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
