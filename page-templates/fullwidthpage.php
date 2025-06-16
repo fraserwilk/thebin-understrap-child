@@ -107,7 +107,7 @@ if (is_page_template('page-templates/no-title.php')) {
                     $args = array(
                         'post_type'      => 'post',
                         'posts_per_page' => 4, // Show only 6 posts
-                        'category_name'  => 'world-news', // Filter by category slug
+                        'category_name'  => 'business', // Filter by category slug
                     );
                     $allPosts_query = new WP_Query($args);
                     ?>
