@@ -49,7 +49,7 @@ if (is_page_template('page-templates/no-title.php')) {
                     ?>
 
 
-                    <!-- 3 col services-1330 -->
+                    <!-- 3 col services-1331 -->
                     <?php
                     $args = array(
                         'post_type'      => 'post',
@@ -102,12 +102,12 @@ if (is_page_template('page-templates/no-title.php')) {
                         </div>
                     </section>
 
-                    <!-- New Section with Left & Right Sidebars -->
+                    <!-- Section with Left & Right Sidebars -->
                     <?php
                     $args = array(
                         'post_type'      => 'post',
                         'posts_per_page' => 4, // Show only 6 posts
-                        'category_name'  => '', // Filter by category slug
+                        'category_name'  => 'world-news', // Filter by category slug
                     );
                     $allPosts_query = new WP_Query($args);
                     ?>
@@ -120,7 +120,7 @@ if (is_page_template('page-templates/no-title.php')) {
                                 <?php endif; ?>
                             </aside>
                             <main id="two-col-all-posts" class="col-md-6 cs-container">
-                                <!-- Add your main content for this section here (used codestitch services-1497) -->
+                                <!-- Add main content for this section here (used codestitch services-1497) -->
                                 <?php if ($allPosts_query->have_posts()) : $count = 1; ?>
                                 <ul class="cs-card-group">
                                     <?php while ($allPosts_query->have_posts()) : $allPosts_query->the_post(); ?>
@@ -131,7 +131,7 @@ if (is_page_template('page-templates/no-title.php')) {
                                                     <?php if (has_post_thumbnail()) : ?>
                                                         <picture class="cs-picture">
                                                             <img decoding="async"
-                                                                src="<?php the_post_thumbnail_url('medium'); ?>"
+                                                                src="<?php the_post_thumbnail_url('full'); ?>"
                                                                 alt="<?php the_title_attribute(); ?>"
                                                                 width="150" height="150" aria-hidden="true">
                                                         </picture>
@@ -168,7 +168,7 @@ if (is_page_template('page-templates/no-title.php')) {
                             </aside>
                         </div>
                     </section>
-                    <!-- End of New Section -->
+                    <!-- End of Section -->
 
             </div><!-- #primary -->
 
