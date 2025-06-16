@@ -1,0 +1,23 @@
+
+/* Hover effect for the whole card */
+.layout-33 {
+
+    .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    }
+    
+    .post-thumb {
+    transition: transform 0.3s ease;
+    }
+
+    /* Link underline reveal on hover */
+    .card-title-link {
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+    }
+    .card-title-link:hover {
+    border-color: $primary;
+    }
+}

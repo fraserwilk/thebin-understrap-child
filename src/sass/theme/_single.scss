@@ -1,0 +1,34 @@
+// Single Post Styles
+  .flex-container {
+    display: flex;
+    gap: 20px; /* Gutter between columns */
+    align-items: flex-start;
+  }
+
+  .left-column {
+    flex: 0 0 30%;
+  }
+
+  .left-column img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .right-column {
+    flex: 0 0 70%;
+    background-color: #f8f8f8;
+    padding: 1rem;
+  }
+
+  /* Responsive stacking on small screens */
+  @media (max-width: 768px) {
+    .flex-container {
+      flex-direction: column;
+    }
+
+    .left-column,
+    .right-column {
+      flex: 0 0 100%;
+    }
+  }

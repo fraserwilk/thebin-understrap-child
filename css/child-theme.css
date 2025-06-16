@@ -11583,7 +11583,10 @@ article h2.entry-title a, article .entry-title.h2 a {
 #comments {
   margin: 2rem 0;
   padding: 1rem;
-  background-color: #fff;
+  background-color: #f8f9fa;
+}
+#comments h2.comments-title, #comments .comments-title.h2 {
+  font-size: calc(0.6rem + 0.9vw);
 }
 
 #wrapper-footer.wrapper {
@@ -12371,6 +12374,43 @@ textarea:not([rows]) {
   }
 }
 
+.card {
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.card .card-header {
+  padding: 0;
+  border: none;
+  display: flex;
+  background-color: #fc8904;
+  padding: 0.2rem 0.5rem;
+  align-items: center;
+  border-radius: 0;
+  font-size: 80%;
+  color: #fff;
+}
+.card .card-header .category {
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 100%;
+}
+.card .card-header a {
+  color: #fff;
+  text-decoration: none;
+}
+.card .card-img img {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+.card .card-body h3.card-title, .card .card-body .card-title.h3 {
+  font-size: calc(0.8rem + 0.6vw);
+}
+.card .card-body h3.card-title a, .card .card-body .card-title.h3 a {
+  color: #000000;
+  text-decoration: none;
+}
+
 /*-- -------------------------- -->
 <---          Footer            -->
 <--- -------------------------- -*/
@@ -12385,7 +12425,7 @@ textarea:not([rows]) {
     width: 100%;
     /* reset on tablet */
     max-width: 34.375rem;
-    height: 50vh;
+    min-height: 30vh;
     margin: auto;
     display: flex;
     justify-content: flex-start;
@@ -13241,43 +13281,6 @@ textarea:not([rows]) {
   }
 }
 /* Desktop - 1024px */
-.card {
-  border: none;
-  border-radius: 0;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-.card .card-header {
-  padding: 0;
-  border: none;
-  display: flex;
-  background-color: #fc8904;
-  padding: 0.2rem 0.5rem;
-  align-items: center;
-  border-radius: 0;
-  font-size: 80%;
-  color: #fff;
-}
-.card .card-header .category {
-  text-transform: uppercase;
-  font-weight: 700;
-  width: 100%;
-}
-.card .card-header a {
-  color: #fff;
-  text-decoration: none;
-}
-.card .card-img img {
-  width: 100%;
-  aspect-ratio: 16/9;
-}
-.card .card-body h3.card-title, .card .card-body .card-title.h3 {
-  font-size: calc(0.8rem + 0.6vw);
-}
-.card .card-body h3.card-title a, .card .card-body .card-title.h3 a {
-  color: #000000;
-  text-decoration: none;
-}
-
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   .signup {
@@ -13342,6 +13345,58 @@ article .entry-header a h2.entry-title:focus, article .entry-header a .entry-tit
 }
 article .entry-header a h2.entry-title:active, article .entry-header a .entry-title.h2:active {
   color: #fc8904;
+}
+
+.flex-container {
+  display: flex;
+  gap: 20px; /* Gutter between columns */
+  align-items: flex-start;
+}
+
+.left-column {
+  flex: 0 0 30%;
+}
+
+.left-column img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.right-column {
+  flex: 0 0 70%;
+  background-color: #f8f8f8;
+  padding: 1rem;
+}
+
+/* Responsive stacking on small screens */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  .left-column,
+  .right-column {
+    flex: 0 0 100%;
+  }
+}
+/* Hover effect for the whole card */
+.layout-33 {
+  /* Link underline reveal on hover */
+}
+.layout-33 .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.layout-33 .post-thumb {
+  transition: transform 0.3s ease;
+}
+.layout-33 .card-title-link {
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.layout-33 .card-title-link:hover {
+  border-color: #fc8904;
 }
 
 /*# sourceMappingURL=child-theme.css.map */

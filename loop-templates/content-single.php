@@ -23,9 +23,16 @@ defined( 'ABSPATH' ) || exit;
 
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	
 
-	<div class="entry-content">
+<div class="flex-container">
+  <div class="left-column">
+    <?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?> 
+	
+  </div>
+  <div class="right-column">
+    
+    <div class="entry-content">
 
 		<?php
 		the_content();
@@ -34,6 +41,9 @@ defined( 'ABSPATH' ) || exit;
 
 	</div><!-- .entry-content -->
 
+  </div>
+</div>
+	
 	<footer class="entry-footer">
 
 		<?php understrap_entry_footer(); ?>

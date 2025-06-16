@@ -57,7 +57,11 @@ article {
 #comments {
     margin: 2rem 0;
     padding: 1rem;
-    background-color: $white;
+    background-color: $gray-100;
+
+    h2.comments-title {
+        font-size: calc(0.6rem + .9vw);
+    }
  }
  // End of article footer styles
 
