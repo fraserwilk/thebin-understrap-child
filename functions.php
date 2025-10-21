@@ -204,15 +204,16 @@ require_once get_theme_file_path( 'inc/child-custom-post-types.php' );
 
 // Add ticker
 function category_post_titles_ticker($atts) {
-    $atts = shortcode_atts([
-        'category' => '',
-        'limit' => 0,
-    ], $atts);
+    $atts = shortcode_atts(['category' => '', 'limit' => 5], $atts);
+	$category = sanitize_text_field( $atts['category'] );
+	$limit = max( 0, intval( $atts['limit'] ) );
 
     $query = new WP_Query([
-        'category_name'  => $atts['category'],
-        'posts_per_page' => $atts['limit'],
-    ]);
+        'category_name'  => $category,
+    	'posts_per_page' => $limit,
+    	'post_status'    => 'publish',
+    	'no_found_rows'  => true,
+    	]);
 
     $output = '<div class="ticker"><div class="ticker-title">Trending Now</div><div class="ticker-items">';
 

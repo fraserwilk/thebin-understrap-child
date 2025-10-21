@@ -34,9 +34,9 @@ if (is_page_template('page-templates/no-title.php')) {
             <div class="col-md-12 content-area" id="primary">
 
                 <main class="site-main" id="main" role="main">
-                        <h1>
+                        <!-- <h1>
                             <?php echo the_title(); ?>
-                        </h1>
+                        </h1> -->
                     
                     <!-- Ticker is added here in the functions.php -->
                     
@@ -106,8 +106,15 @@ if (is_page_template('page-templates/no-title.php')) {
                     <?php
                     $args = array(
                         'post_type'      => 'post',
-                        'posts_per_page' => 4, // Show only 6 posts
-                        'category_name'  => 'business', // Filter by category slug
+                        'posts_per_page' => 4, // Show only 4 posts
+                        'tax_query'      => array(
+                            array(
+                                'taxonomy' => 'category',
+                                'field'    => 'slug',
+                                'terms'    => array( 'product-news', 'tech' ), // posts in either category
+                                'operator' => 'IN',
+                            ),
+                        ),
                     );
                     $allPosts_query = new WP_Query($args);
                     ?>

@@ -12693,6 +12693,8 @@ textarea:not([rows]) {
     width: 100%;
     height: 100%;
     display: block;
+    -o-object-fit: contain;
+    object-fit: contain;
   }
   #services-1331 .cs-item .cs-card-content {
     flex: 1 1 85%;
